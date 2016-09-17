@@ -1,0 +1,537 @@
+
+#k-titleBar {
+    width:100%;
+    height:2.5em;
+    padding-top:1.25em;
+    padding-bottom:1.25em;
+    top:0;
+    margin:auto;
+    background:navy;
+    
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow:0 0 4px 2px rgba(128, 128, 128, 0.38);
+    position:fixed;
+    
+    z-index:1;
+}
+
+#k-title {
+    font-family:"Roboto", "Segoe UI", "Arial Narrow", sans-serif;
+    color:#ffffff;
+    max-width:60%;
+    font-size:1.2em;
+    float:left;
+    margin-left:20px;
+    height:32px;
+    display:table;
+}
+
+body {
+    
+    margin:0;
+    background:#fafafa;
+}
+
+#k-icon {
+    float:left;
+    border: 2px solid transparent;
+    height:32px;
+    width:32px;
+    margin-left:32px;
+    background-image:url("/resources/images/ic_menu_white_24dp/web/ic_menu_white_24dp_2x.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+    transition: .2s all cubic-bezier(.9, .25, .4, 1);
+}
+
+#k-icon:hover{
+    border-radius:10%;
+}
+
+#k-icon:active, #k-icon:focus{  /*active is pressed down, focus is tab based.*/
+    border-radius:20%;
+    background-color:rgba(240, 248, 255, 0.25);
+}
+
+#k-title-text {
+    display:table-cell;
+    vertical-align: middle;
+}
+
+#k-nav {
+    width:20em;
+    height:100vh;
+    
+    top:0;
+    bottom:0;
+    left:-20em;
+    
+    position:fixed;
+    
+    background:rgba(0, 0, 128, 0.75);
+    
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow:0 0 20px 10px rgba(128, 128, 128, 0.38);
+    
+    transition: 0.75s left cubic-bezier(0.4, 0.0, 0.2, 1);
+    
+    z-index:2;
+}
+
+#k-content {
+    width:100%;
+/*    Height can be whatever it needs to be. Minimum height for escaping menu.*/
+    min-height:100vh;
+    
+    margin-top:5.1em; /*0.1em space for shadow to show*/
+    background:#fafafa;
+    
+    filter:blur(0px);
+    -webkit-filter:blur(0px);
+    
+    transition: 0.75s all ease-in-out;
+    
+    z-index:0;
+}
+
+#k-body {
+    margin:16px;
+}
+
+#k-other {
+    font-family:"Roboto", "Segoe UI", "Arial Narrow", sans-serif;
+    color:#ffffff;
+    max-width:40%;
+    font-size:0.8em;
+    top:0;
+    float:right;
+    margin-left:20px;
+    margin-right:20px;
+    
+    height:32px;
+    max-height:32px;
+    overflow:auto;
+    
+    display:table;
+}
+
+#k-other-content {
+    display:table-cell;
+    vertical-align: middle;
+}
+
+.k-menu-default {
+    display:inline-block;
+    text-align:center;
+    
+    height:32px;
+    width:32px;
+    margin-left:16px;
+/*    margin-right:32px; Yes, I know it is more margin right.*/
+    font-size:24px;
+    
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+    
+    cursor:pointer;
+}
+
+.k-menu-default:active {
+    transform:scale(0.9);
+}
+
+.k-menu-default:active {
+    border-radius:50%;
+    background:rgba(255, 255, 255, 0.45);
+    
+}
+
+.k-help {
+    cursor:help;
+}
+
+.k-wait {
+    cursor:progress;
+}
+
+.k-wait-background, .k-progress {
+    cursor:progress
+}
+
+.k-action {
+    border-radius:5px;
+    border: 1px solid lightblue;
+    padding-right:5px;
+    padding-left:5px;
+    transition: background-color .2s ease-in-out;
+}
+
+.k-action:hover, .k-action:focus, k-action:active {
+    border: 1px solid navy;
+    background:lightblue;
+}
+
+
+
+.k-inline-message {
+    width:100%;
+    display:table;
+    height:50px;
+    background:#ffc400;
+    border: 1px solid orange;
+    border-radius:10px;
+    
+    margin-top:16px;
+}
+
+.k-inline-message-text {
+    font-size:1em;
+    font-family:Roboto;
+    display:table-cell;
+    vertical-align:middle;
+    padding:16px;
+    transition: .2s padding-left ease-in;
+}
+
+.k-inline-message-text:hover {
+    padding-left:22px;
+}
+
+.k-styles-error {
+    color:white;
+    background:#f44336;
+    border: 1px solid #b71c1c;
+}
+
+.k-styles-readable {
+    opacity:0.95;
+}
+
+
+button, .k-button {
+  transition:.2s all ease-out;
+  border:3px solid transparent;
+  padding:10px;
+  min-width:100px;
+  outline:none;
+  background:#fafafa;
+  color:grey;
+  box-shadow:0 0 5px 1px lightgrey;
+}
+
+button:active, .k-button:active {
+  border:3px solid #fafafa;
+  background:grey;
+  color:#fafafa;
+  box-shadow:0 0 1px 1px lightgrey;
+  transform:scale(0.9);
+}  
+
+button:focus, .k-button:focus {
+  border:3px solid #fafafa;
+  background:grey;
+  color:#fafafa;
+}
+
+button:hover, .k-button:hover {
+    box-shadow:0 0 8px 2px lightgrey;
+}
+
+.k-submit {
+    color:#477249;
+}
+
+.k-submit:active, .k-submit:active {
+    background:#4caf50;
+}
+
+.k-submit:focus {
+    background:#4caf50;
+}
+
+/* Must be of display inline-block */
+.k-push:active {
+    transform:scale(0.9);
+}
+
+.k-private-mouse-click {
+    width:15px;
+    height:15px;
+    background:white;
+    border-radius:50%;
+    border: 1px solid black;
+    opacity:0.15;
+    position:absolute;
+    z-index:0;
+    pointer-events:none;
+    transition:.2s all ease-in-out;
+}
+
+.k-button-icon-content {
+    margin:auto;
+    padding:5px;
+    margin-bottom:10px;
+    display:table-cell;
+    background:#fafafa;
+    box-shadow:0 0 2px 2px lightgrey;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto", "Segoe UI", "Helvetica Neue", "Helvetica", "Arial";
+}
+
+input {
+    padding:10px;
+    outline: 0 solid transparent;
+    outline-offset: 0px;
+    margin: 2px;
+    font-family: "Roboto", "Segoe UI", "Helvetica Neue", "Helvetica", "Arial";
+    transition: outline .2s ease-in-out;
+}
+
+input:focus {
+    outline:2px solid lightgrey;
+    outline-offset: 2px;
+}
+
+input[type="password"] {
+    color:grey;
+}
+
+input[type="password"]:focus {
+    color:black;
+}
+
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+/*Loading anim*/
+@-webkit-keyframes uil-rolling-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes uil-rolling-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes uil-rolling-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-ms-keyframes uil-rolling-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes uil-rolling-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes uil-rolling-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes uil-rolling-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes uil-rolling-anim {
+  0% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.uil-rolling-css {
+  width: 200px;
+  height: 200px;
+}
+.uil-rolling-css > div {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  -ms-animation: uil-rolling-anim 2s linear infinite;
+  -moz-animation: uil-rolling-anim 2s linear infinite;
+  -webkit-animation: uil-rolling-anim 2s linear infinite;
+  -o-animation: uil-rolling-anim 2s linear infinite;
+  animation: uil-rolling-anim 2s cubic-bezier(.59, -0.33, .44, 1.28) infinite;
+}
+.uil-rolling-css > div div {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  border-radius: 1000px 1000px 0 0;
+  border-color: navy; /*Change this for color*/
+  border-style: solid;
+  border-width: 6px;
+  border-bottom-width: 0;
+}
+.uil-rolling-css > div div:nth-of-type(2) {
+  -ms-transform: translate(0, 50px) rotate(144deg) translate(0, -50px);
+  -moz-transform: translate(0, 50px) rotate(144deg) translate(0, -50px);
+  -webkit-transform: translate(0, 50px) rotate(144deg) translate(0, -50px);
+  -o-transform: translate(0, 50px) rotate(144deg) translate(0, -50px);
+  transform: translate(0, 50px) rotate(144deg) translate(0, -50px);
+}
