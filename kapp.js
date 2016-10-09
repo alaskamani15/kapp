@@ -25,7 +25,7 @@ var kapp = {
         document.getElementById("k-nav").style.left = "0px";
 	    
 	    var blur = 5;
-	    if (!kapp.mobile) {
+	    if (kapp.mobile) {
 		    blur = 0;
 	    }
 	    
