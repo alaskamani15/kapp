@@ -104,14 +104,14 @@ var kapp = {
 	    
      document.body.style.overflow = "hidden"; 
 
-     document.getElementById("k-internal-dialog-button-neutral").addEventListener("click", kapp.dialogNeutral);
+     document.getElementById("k-internal-dialog-button-neutral").addEventListener("click", kapp.dialogNeutral(callback));
 
-     document.getElementById("k-internal-dialog-button-false").addEventListener("click", kapp.dialogFalse);
+     document.getElementById("k-internal-dialog-button-false").addEventListener("click", kapp.dialogFalse(callback));
 
-     document.getElementById("k-internal-dialog-button-true").addEventListener("click", kapp.dialogTrue);
+     document.getElementById("k-internal-dialog-button-true").addEventListener("click", kapp.dialogTrue(callback));
    },
 	
-	dialogNeutral: function(){
+	dialogNeutral: function(callback){
         	document.body.style.overflow = "auto";
 	     document.getElementById("k-internal-dialog-placeholder").style.opacity = 0;
        		callback("NEUTRAL");
@@ -119,7 +119,7 @@ var kapp = {
 		document.getElementById("k-internal-dialog-button-neutral").removeEventListener("click", kapp.dialogNeutral);
 	},
 	
-	dialogTrue: function(){
+	dialogTrue: function(callback){
 		document.body.style.overflow = "auto"; 
 	     document.getElementById("k-internal-dialog-placeholder").style.opacity = 0;
 	     callback(true);
@@ -127,7 +127,7 @@ var kapp = {
 		document.getElementById("k-internal-dialog-button-true").removeEventListener("click", kapp.dialogTrue);
 	},
 	
-	dialogFalse: function(){
+	dialogFalse: function(callback){
 		document.body.style.overflow = "auto"; 
 	     document.getElementById("k-internal-dialog-placeholder").style.opacity = 0;
 	     callback(false);
