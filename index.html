@@ -12,58 +12,73 @@
 	</head>
 
 	<body ontouchstart="">
-	   
-        <div id="k-titleBar">
-            <div id="k-icon" class="k-push"></div>
-            <div id="k-title"><span id="k-title-text">Demo</span></div>
-            <div id="k-other">
-                <div id="k-other-content">
-                    <span class="k-menu-default" title="Add something">+</span>
-                    <span class="k-menu-default" title="Get help">?</span>
-                </div>
-            </div>
-        </div>
-        
-        <div id="k-nav">
-        
-        </div>
-        
-        <div id="k-content">
-            <div id="k-body">
-                <div class='uil-rolling-css' style='transform:scale(1);'><div><div></div><div></div></div></div>
-                    
-                You can <span class="k-help k-action" title="There's a menu item for that! See the top right corner.">add</span> things here, but it might take time to <span class="k-wait-background k-action">load</span>.
-                
-                <div class="k-inline-message" id="warn">
-                    <span class="k-inline-message-text">This is an inline message.</span>
-                </div>
-                
-                <div class="k-inline-message k-styles-error">
-                    <span class="k-inline-message-text k-styles-readable">This is an inline message.</span>
-                </div>
-                
-                <h1>Input types</h1>
-                
-                <h2>Buttons</h2>
-                <button>Here is a normal button.</button>
-                
-                <br/><br/>
-                
-                <button class="no-select">
-                        <img src="/resources/images/ic_menu_black_24dp/web/ic_menu_black_24dp_1x.png" class="k-button-icon-content"/>
-                        Here is a button with an icon.
-                </button>
-                
-                <br/><br/>
-                
-                <h2>Input</h2>
-                <input type="text"/>
-                <input type="number"/>
-                <input type="password"/>
-                <button class="k-submit" onclick="alert('submit!')">Submit</button>
-            </div>
-        </div>
+		<div id="k-internal-dialog-placeholder">
+		  <div id="k-internal-dialog-icon">
+		  </div>
+		  <div id="k-internal-dialog-title">Welcome back!</div>
+		  <div id="k-internal-dialog-content">It's great to see you again!</div>
+		  <div id="k-internal-dialog-button-row">
+
+		    <button id="k-internal-dialog-button-neutral">s</button>
+
+		    <button id="k-internal-dialog-button-false">s</button>
+
+
+		    <button id="k-internal-dialog-button-true">Greetings!</button>
+		  </div>
+		</div>
 		
+		<div id="k-titleBar">
+		    <div id="k-icon" class="k-push"></div>
+		    <div id="k-title"><span id="k-title-text">Demo</span></div>
+		    <div id="k-other">
+			<div id="k-other-content">
+			    <span class="k-menu-default" title="Add something">+</span>
+			    <span class="k-menu-default" title="Get help">?</span>
+			</div>
+		    </div>
+		</div>
+
+		<div id="k-nav">
+
+		</div>
+
+		<div id="k-content">
+		    <div id="k-body">
+			<div class='uil-rolling-css' style='transform:scale(1);'><div><div></div><div></div></div></div>
+
+			You can <span class="k-help k-action" title="There's a menu item for that! See the top right corner.">add</span> things here, but it might take time to <span class="k-wait-background k-action">load</span>.
+
+			<div class="k-inline-message" id="warn">
+			    <span class="k-inline-message-text">This is an inline message.</span>
+			</div>
+
+			<div class="k-inline-message k-styles-error">
+			    <span class="k-inline-message-text k-styles-readable">This is an inline message.</span>
+			</div>
+
+			<h1>Input types</h1>
+
+			<h2>Buttons</h2>
+			<button>Here is a normal button.</button>
+
+			<br/><br/>
+
+			<button class="no-select">
+				<img src="/resources/images/ic_menu_black_24dp/web/ic_menu_black_24dp_1x.png" class="k-button-icon-content"/>
+				Here is a button with an icon.
+			</button>
+
+			<br/><br/>
+
+			<h2>Input</h2>
+			<input type="text"/>
+			<input type="number"/>
+			<input type="password"/>
+			<button class="k-submit" onclick="alert('submit!')">Submit</button>
+		    </div>
+		</div>
+
 	</body>
 	
 	<script src="kapp.js"></script>
