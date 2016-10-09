@@ -104,35 +104,24 @@ var kapp = {
 	    
      document.body.style.overflow = "hidden"; 
 
-     document.getElementById("k-internal-dialog-button-neutral").addEventListener("click", kapp.dialogNeutral(callback));
-
-     document.getElementById("k-internal-dialog-button-false").addEventListener("click", kapp.dialogFalse(callback));
-
-     document.getElementById("k-internal-dialog-button-true").addEventListener("click", kapp.dialogTrue(callback));
-   },
-	
-	dialogNeutral: function(callback){
-        	document.body.style.overflow = "auto";
+     document.getElementById("k-internal-dialog-button-neutral").addEventListener("click", function(){
+        document.body.style.overflow = "auto";
 	     document.getElementById("k-internal-dialog-placeholder").style.opacity = 0;
-       		callback("NEUTRAL");
-		
-		document.getElementById("k-internal-dialog-button-neutral").removeEventListener("click", kapp.dialogNeutral);
-	},
-	
-	dialogTrue: function(callback){
-		document.body.style.overflow = "auto"; 
-	     document.getElementById("k-internal-dialog-placeholder").style.opacity = 0;
-	     callback(true);
-		
-		document.getElementById("k-internal-dialog-button-true").removeEventListener("click", kapp.dialogTrue);
-	},
-	
-	dialogFalse: function(callback){
-		document.body.style.overflow = "auto"; 
+       callback("NEUTRAL");
+     });
+
+     document.getElementById("k-internal-dialog-button-false").addEventListener("click", function(){
+	     document.body.style.overflow = "auto"; 
 	     document.getElementById("k-internal-dialog-placeholder").style.opacity = 0;
 	     callback(false);
-		document.getElementById("k-internal-dialog-button-false").removeEventListener("click", kapp.dialogFalse);
-	}
+     });
+
+     document.getElementById("k-internal-dialog-button-true").addEventListener("click", function(){
+             document.body.style.overflow = "auto"; 
+	     document.getElementById("k-internal-dialog-placeholder").style.opacity = 0;
+	     callback(true);
+     });
+   }
 }
 
 document.getElementById("k-icon").addEventListener("click", kapp.menuIconClicked, false);
