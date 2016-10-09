@@ -93,17 +93,25 @@ var kapp = {
      document.getElementById("k-internal-dialog-button-neutral").innerHTML = neutral;
      document.getElementById("k-internal-dialog-button-false").innerHTML = f;
      document.getElementById("k-internal-dialog-button-true").innerHTML = t;
+	    
+     document.body.style.overflow = "hidden"; 
 
      document.getElementById("k-internal-dialog-button-neutral").addEventListener("click", function(){
+        document.body.style.overflow = "auto";
+	     document.getElementById("k-internal-dialog-placeholder").style.opacity = 0;
        callback("NEUTRAL");
      });
 
      document.getElementById("k-internal-dialog-button-false").addEventListener("click", function(){
-       callback(false);
+	     document.body.style.overflow = "auto"; 
+	     document.getElementById("k-internal-dialog-placeholder").style.opacity = 0;
+	     callback(false);
      });
 
      document.getElementById("k-internal-dialog-button-true").addEventListener("click", function(){
-       callback(true);
+             document.body.style.overflow = "auto"; 
+	     document.getElementById("k-internal-dialog-placeholder").style.opacity = 0;
+	     callback(true);
      });
    }
 }
