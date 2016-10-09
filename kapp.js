@@ -1,6 +1,8 @@
 var kapp = {
 	version: 0,
 	
+	mobile: false,
+	
 	getVersion: function() {
 		return kapp.version;
 	},
@@ -21,8 +23,14 @@ var kapp = {
     menuIconClicked: function(){
         //Open the menu
         document.getElementById("k-nav").style.left = "0px";
-        document.getElementById("k-content").style.filter = "blur(5px)";
-        document.getElementById("k-content").style.webkitFilter = "blur(5px)";
+	    
+	    var blur = 5;
+	    if (!mobile) {
+		    blur = 0;
+	    }
+	    
+        document.getElementById("k-content").style.filter = "blur(" + blur + "px)";
+        document.getElementById("k-content").style.webkitFilter = "blur(" + blur + "px)";
         
         document.getElementById("k-content").addEventListener("click", function(){
             //Close the menu
@@ -118,7 +126,7 @@ var kapp = {
 
 document.getElementById("k-icon").addEventListener("click", kapp.menuIconClicked, false);
 document.body.addEventListener("mousedown", kapp.bodyClicked, false);
-if (kapp.isMobile()) {document.getElementById("k-nav").style.width = "18em"}
+if (kapp.isMobile()) {document.getElementById("k-nav").style.width = "18em"; kapp.mobile = true;}
 
 //Programming features here
 kapp.setTitle("Demo");
