@@ -550,3 +550,75 @@ input[type="password"]:focus {
   -o-transform: translate(0, 50px) rotate(144deg) translate(0, -50px);
   transform: translate(0, 50px) rotate(144deg) translate(0, -50px);
 }
+
+/*dialogs*/
+#k-internal-dialog-button-true, #k-internal-dialog-button-false, #k-internal-dialog-button-neutral {
+  color:white;
+}
+
+#k-internal-dialog-button-true {
+  background:rgb(28, 144, 243);
+}
+
+#k-internal-dialog-button-false {
+  background:rgb(205, 75, 91);
+}
+
+#k-internal-dialog-button-neutral {
+  background:rgb(243, 245, 246);
+  color:gray;
+}
+
+#k-internal-dialog-placeholder {
+  opacity:0;
+  width:25em;
+  max-height:15em;
+  min-height:9em;
+  background:rgba(255, 255, 255, 0.8);
+  border-radius:5px;
+  position:absolute;
+  transform:translateY(-50%) translateX(-50%);
+  top:50%;
+  left:50%;
+  overflow-y:auto;
+  overflow-x:hidden;
+  -webkit-overflow-scrolling: touch;
+  padding:15px;
+  z-index:100;
+  box-shadow:0 0 10px 1px lightgrey;
+  transition:.2s all ease-in;
+}
+
+#k-internal-dialog-placeholder:active {
+  width:26em;
+}
+
+#k-internal-dialog-title {
+  text-align:center;
+  font-size:2em;
+  font-family:Roboto;
+  font-weight:100;
+}
+
+#k-internal-dialog-content {
+  text-align:center;
+  margin-top:1em;
+  padding-bottom:4em;
+  line-height:150%;
+  font-family:Roboto;
+  font-size:1em;
+}
+
+#k-internal-dialog-button-row {
+  float:bottom;
+  position:absolute;
+  text-align:center;
+  background:none;
+  bottom:0;
+  left:0;
+  right:0;
+  margin-bottom:1em;
+  width:100%;
+  
+}
+
