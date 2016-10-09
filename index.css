@@ -593,10 +593,6 @@ input[type="password"]:focus {
   transition:.2s all ease-in;
 }
 
-#k-internal-dialog-placeholder:active {
-  width:26em;
-}
-
 #k-internal-dialog-title {
   text-align:center;
   font-size:2em;
